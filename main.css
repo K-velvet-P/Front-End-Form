@@ -1,0 +1,375 @@
+@font-face {
+    font-family: ubuntu-bold;
+    src: url(./assets/fonts/Ubuntu-Bold.ttf);
+    font-weight: bold;
+  }
+
+@font-face {
+    font-family: ubuntu-medium;;
+    src: url(./assets/fonts/Ubuntu-Medium.ttf);
+    font-weight: medium;
+  }
+@font-face {
+    font-family:ubuntu-regular;
+    src: url(./assets/fonts/Ubuntu-Regular.ttf);
+    font-weight: regular;
+  }
+
+@media only screen and (max-width: 992px){
+    .steps_desktop{
+        display: none;
+    }
+  }
+
+@media only screen and (min-width: 992px){
+    .steps_desktop{
+        display: block;
+    }
+  }
+
+
+#go_back_button{
+  visibility:hidden;
+  }
+
+#one_sidebar,#two_sidebar_color,#three_sidebar_color,#four_sidebar_color,#confirm_step_button,
+#toggle-content-addons_monthly,#toggle-content-addons_yearly,#toggle-content-plan,#toggle-content-summary_monthly,#toggle-content-summary_yearly,#toggle-content-confirmation,#toggle-content-attribution,#toggle-content-steps_desktop,#toggle-content-yearly_plan{
+      display: none;
+  }
+  
+#toggle-content-form, #next_step_button_div #toggle-content-monthly_plan #toggle-content-btn_div,#BTNDIV2{
+      display: block;
+  }
+
+
+  
+  
+  
+body{
+      /* height: 100vh; */
+      /* border: 1px solid blue; */
+      background-color: #edf4fe;
+      height: 10vh;    
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    }
+    
+.content{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+.form,.plan,.add-ons,.summary,.confirmation,.attribution,.steps_desktop {
+    background-color:white ;
+    border-radius: 10px;
+    padding: 1rem; 
+    margin: 10px;
+    }
+    
+.form{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    }
+
+    #form_content{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    
+   #form_content>input{
+   margin-bottom: 1rem;
+   padding: 0.7rem;
+   border: 1px solid hsl(229, 24%, 87%);  
+   border-radius: 5px;
+     }
+  
+    
+    
+#form_content>label{
+    color:#153459;
+    font-family: ubuntu-regular;
+    margin-bottom: 0.3rem;  
+}
+        
+.sidebar {
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    background-repeat: no-repeat;
+}
+                
+                
+.steps_mobile {
+    display: flex;
+    align-self: center;
+    width: 50%;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.number_sidebar {
+    height: 1.5em;
+}
+
+    
+h1{
+    color:#153459;
+    font-family: ubuntu-bold;
+}
+
+
+h2{
+  font-family: ubuntu-regular;
+  color:hsl(231, 11%, 63%);
+  
+}
+
+h3{
+  color:hsl(213, 96%, 18%);
+  font-family: ubuntu-medium;;
+  font-size: 1.2em;
+}
+
+h4{
+  font-family: ubuntu-regular;
+  color:hsl(231, 11%, 63%);
+  font-size: 1.2em;
+}
+
+h5{
+  font-family: ubuntu-regular;
+  color:hsl(213, 96%, 18%);
+
+}
+
+p{
+    color:hsl(213, 96%, 18%);
+    font-family: ubuntu-regular;
+    font-size: 16px;
+
+}
+
+
+.btn_div{
+    width: 100%;
+    display: flex;
+    border: 1px solid blue;
+    background-color: white;
+    justify-content: space-between;
+}
+
+#next_step_button{
+    display: flex;
+    align-self: flex-end;
+    color: white;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 3px;
+    padding: 0.5rem;
+    border: none;
+    margin: 1rem;
+    font-family: ubuntu-regular;
+
+}
+
+#go_back_button{
+    display: flex;
+    align-self: flex-end;
+    color:hsl(231, 11%, 63%);
+    font-family: ubuntu-regular;
+    background-color: white;
+    border-radius: 3px;
+    padding: 0.5rem;
+    border: none;
+    margin: 1rem;
+}
+
+#confirm_step_button{
+    align-self: flex-end;
+    color: white;
+    font-family: ubuntu-regular;
+    background-color:  hsl(243, 100%, 62%);
+    border-radius: 3px;
+    padding: 0.5rem;
+    border: none;
+    margin: 1rem;
+}
+
+#monthly_plan,#yearly_plan{
+  display: flex;
+  flex-direction: column;
+  
+  /* justify-content: space-around; */
+}
+
+
+#monthly_plan p:first-child {
+  color:hsl(213, 96%, 18%);
+
+}
+
+
+.btn{
+  /* display: flex; */
+  margin: 0.5rem;
+  background-color: hsl(231, 100%, 99%);
+  border: solid 1px hsl(229, 24%, 87%);
+  border-radius: 10px;
+
+}
+
+/* cant achive qith flexbox need to learn more css! */
+/* .btn>:first-child{
+  float: left;
+} */
+
+
+.btn:focus { border-color:hsl(243, 100%, 62%); }
+
+.planChoise{
+  font-family: ubuntu-medium;;
+}
+
+#selectedPlanPriceM,#planChoiseM,#selectedPlanPriceY,#planChoiseY{
+font-family: ubuntu-medium;;
+}
+
+.summary1 {
+  border-bottom: 1px solid hsl(229, 24%, 87%);
+}
+a{
+  color: hsl(231, 11%, 63%);
+  font-family: ubuntu-regular;
+}
+
+.total{
+  color: hsl(231, 11%, 63%);
+
+}
+
+.totalPriceM, .totalPriceY{
+  color:  hsl(243, 100%, 62%);
+  font-family: ubuntu-medium;;
+
+}
+
+.summary1,.summary2,.summary3,.summary4,.summary5{
+  display: flex;
+  justify-content: space-between;
+  color: hsl(231, 11%, 63%);
+}
+.addonChoise1,.addonChoise2,.addonChoise3,.addonChoiseY1,.addonChoiseY2,.addonChoiseY3{
+  display: flex;
+  justify-content: space-between;
+  color: hsl(231, 11%, 63%);
+}
+
+#switch_div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:hsl(213, 96%, 18%);
+    font-family: ubuntu-regular;
+    font-size: 16px;
+    background-color: hsl(217, 100%, 97%);
+}
+/* css for the switch button  */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 1.5em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1em;
+    width: 1em;
+    left: 12px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: hsl(213, 96%, 18%);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  #addons{
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+    background-color: hsl(231, 100%, 99%);
+    border: solid 1px hsl(229, 24%, 87%);
+    border-radius: 10px;
+
+  }
+
+.selections {
+  background-color: hsl(231, 100%, 99%);
+}
+
+.confirmation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin: 1rem; */
+  /* background-color: hsl(231, 100%, 99%);
+  border: solid 1px hsl(229, 24%, 87%); */
+
+}
+
+.confirmation>h2{
+  text-align: center;
+}
