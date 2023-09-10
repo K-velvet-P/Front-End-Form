@@ -15,17 +15,107 @@
     font-weight: regular;
   }
 
+  /* phone screen  */
 @media only screen and (max-width: 992px){
     .steps_desktop{
         display: none;
     }
+    body{
+      /* height: 100vh; */
+      /* border: 1px solid blue; */
+      background-color: #edf4fe;
+      height: 10vh;    
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    }
+
+    .content{
+      /* height: 100vh; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
   }
 
-@media only screen and (min-width: 992px){
-    .steps_desktop{
-        display: block;
-    }
+  .sidebar {
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    background-repeat: no-repeat;
+}
+  
+  
   }
+
+
+/* destop */
+@media only screen and (min-width: 992px) {
+    
+  .steps_desktop{
+        display: flex;
+        flex-direction: column ;
+        /* color:#edf4fe; */
+        
+
+        background: url("assets/images/bg-sidebar-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-size: cover;
+        /* background-attachment: fixed;  */
+        height: 100vh; 
+        width: 50vh; 
+        font-family:ubuntu-regular ;
+        /* justify-content: space-around; */
+      }
+
+    .toggle-content-steps_mobile{
+       display: none;
+      }
+
+      /* body{
+        height: 100vh; 
+        border: 1px solid blue; 
+         background-color: #edf4fe; 
+         height: 10vh;     
+         background-repeat: no-repeat; 
+         background-size: cover; 
+         background-image: url("assets/images/bg-sidebar-desktop.svg"); 
+         background-position: left;
+      }   */
+
+      #destop_view {
+          display: flex;
+          flex-direction: row;
+          /* justify-content: space-between; */
+          /* width: 50vh;  */
+          width: 100%; 
+          align-items: center;
+  
+        } 
+      
+      .content {
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+          
+      .sidebar, .toggle-content-steps_mobile, .steps_mobile{
+        display: none;
+      } 
+     
+    }
+
+
+
+.sidebar{
+    display: none;
+  }
+
+     
+
+ 
 
 
 #go_back_button{
@@ -45,24 +135,13 @@
   
   
   
-body{
-      /* height: 100vh; */
-      /* border: 1px solid blue; */
-      background-color: #edf4fe;
-      height: 10vh;    
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url("./assets/images/bg-sidebar-mobile.svg");
-    }
+
     
-.content{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+
+
+
     
-.form,.plan,.add-ons,.summary,.confirmation,.attribution,.steps_desktop {
+.form,.plan,.add-ons,.summary,.confirmation,.attribution {
     background-color:white ;
     border-radius: 10px;
     padding: 1rem; 
@@ -97,12 +176,7 @@ body{
     margin-bottom: 0.3rem;  
 }
         
-.sidebar {
-    height: 10%;
-    display: flex;
-    justify-content: space-around;
-    background-repeat: no-repeat;
-}
+
                 
                 
 .steps_mobile {

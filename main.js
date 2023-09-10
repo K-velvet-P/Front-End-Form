@@ -17,104 +17,78 @@ let switch_div = document.getElementById("plan_switch");
 
 let btnDiv = document.getElementById("toggle-content-btn_div");
 
+let currentPageIndex;
 
-// ---MOVE TO NEXT STEP---
+let pageArray = [
+  form,
+  plan,
+  addons_monthly,
+  // addons_yearly,
+  summary_monthly,
+  // summary_yearly,
+  confirmation,
+  attribution,
+];
+
+// // ---REFACTORING---
+// make array of all the pages
+// write function that maps trough the array and hides/shows the neccery pages
+
 function nextStep() {
+  // Find the index of the currently visible div
+  let currentPageIndex = pageArray.findIndex((page) => {
+    return page.classList.contains("current-page");
+  });
+  console.log("currentPageIndex", currentPageIndex);
 
-  if (yearly_plan.style.display === "block") {
-    console.log("yearly slected, add ons");
-    plan.style.display = "none";
-    yearly_plan.style.display = "none";
-    addons_yearly.style.display = "block";
-    three_sidebar_color.style.display = "block";
-    three_sidebar.style.display = "none";
-    two_sidebar_color.style.display = "none";
-    two_sidebar.style.display = "block";
-   
-  } else if (addons_yearly.style.display === "block") {
-    console.log("yearly slected,finshing up");
-    addons_yearly.style.display = "none";
-    //change this to yearly summary
-    summary_yearly.style.display = "block";
-    confirm_step_button.style.display = "block";
-    nextStepBtn.style.display = "none";
-    three_sidebar_color.style.display = "none";
-    three_sidebar.style.display = "block";
-    four_sidebar_color.style.display = "block";
-    four_sidebar.style.display = "none";
+  console.log("currentPage", pageArray[currentPageIndex + 1]);
 
-  } else if (plan.style.display === "block") {
-    console.log("monthly slected,add ons");
-    plan.style.display = "none";
-    addons_monthly.style.display = "block";
+  // Check if currentPageIndex is valid
+  if (currentPageIndex !== -1 && currentPageIndex < pageArray.length - 1) {
+    // Remove the current-page class from the current div
+    pageArray[currentPageIndex].classList.remove("current-page");
+    pageArray[currentPageIndex].style.display = "none";
+    // Add the current-page class to the next div
+    pageArray[currentPageIndex + 1].classList.add("current-page");
+    pageArray[currentPageIndex + 1].style.display = "block";
+  }
 
-    three_sidebar_color.style.display = "block";
-    three_sidebar.style.display = "none";
-    two_sidebar_color.style.display = "none";
-    two_sidebar.style.display = "block";
-  } else if (addons_monthly.style.display === "block") {
-    console.log("monthly slected,finshing up");
-    addons_monthly.style.display = "none";
-    summary_monthly.style.display = "block";
-    confirm_step_button.style.display = "block";
-    nextStepBtn.style.display = "none";
-    three_sidebar_color.style.display = "none";
-    three_sidebar.style.display = "block";
-    four_sidebar_color.style.display = "block";
-    four_sidebar.style.display = "none";
-  } else if (summary_monthly.style.display === "block") {
-    console.log("next step4");
-    summary_monthly.style.display = "none";
-    confirmation.style.display = "block";
-  } else {
-    console.log("select your plan");
-    form.style.display = "none";
-    plan.style.display = "block";
+  if (currentPageIndex === 0) {
     goBackBtn.style.visibility = " visible";
-    two_sidebar_color.style.display = "block";
-    one_sidebar_color.style.display = "none";
-    one_sidebar.style.display = "block";
-    two_sidebar.style.display = "none";
+  }
+
+  if (currentPageIndex === pageArray.length - 4) {
+    nextStepBtn.style.display = "none";
+    confirm_step_button.style.display = "block";
   }
 }
 
-// ---GO BACK A STEP---
 function goBack() {
-  if (plan.style.display === "block") {
-    console.log("go back to personal info");
-    plan.style.display = "none";
-    form.style.display = "block";
-    goBackBtn.style.visibility = " hidden";
-  } else if (addons_yearly.style.display === "block") {
-    console.log("go back to select your yearly plan");
-    addons_yearly.style.display = "none";
-    plan.style.display = "block";
-    yearly_plan.style.display = "block";
-    switch_div.checked = true;
-  } else if (addons_monthly.style.display === "block") {
-    console.log("go back to select your monthly plan");
-    addons_monthly.style.display = "none";
-    plan.style.display = "block";
-  } else if (summary_yearly.style.display === "block") {
-    summary_yearly.style.display = "none";
-    addons_yearly.style.display = "block";
-    nextStepBtn.style.display = "block";
-    confirm_step_button.style.display = "none";
-  } else if (summary_monthly.style.display === "block") {
-    console.log("go back to add ons");
-    summary_monthly.style.display = "none";
-    addons_monthly.style.display = "block";
-    nextStepBtn.style.display = "block";
-    confirm_step_button.style.display = "none";
-  } else if (confirmation.style.display === "block") {
-    console.log("go back to finshing up");
-    confirmation.style.display = "none";
-    summary_monthly.style.display = "block";
-  } else if (attribution.style.display === "block") {
-    console.log("next step6");
-    attribution.style.display = "none";
-    summary_monthly.style.display = "block";
+  let currentPageIndex = pageArray.findIndex((page) => {
+    return page.classList.contains("current-page");
+  });
+  console.log("currentPageIndex", currentPageIndex);
+  if (currentPageIndex !== -1 && currentPageIndex < pageArray.length - 1) {
+    // Remove the current-page class from the current div
+    pageArray[currentPageIndex].classList.remove("current-page");
+    pageArray[currentPageIndex].style.display = "none";
+    // Add the current-page class to the next div
+    pageArray[currentPageIndex - 1].classList.add("current-page");
+    pageArray[currentPageIndex - 1].style.display = "block";
   }
+  if (currentPageIndex === 1) {
+    goBackBtn.style.visibility = " hidden";
+  }
+}
+
+// ---CONFIRMATION PAGE---
+function Confirm() {
+  console.log("finish");
+  summary_monthly.style.display = "none";
+  summary_yearly.style.display = "none";
+  confirmation.style.display = "block";
+  btnDiv.style.visibility = "hidden";
+  goBackBtn.style.visibility = "hidden";
 }
 
 // ---CHANGE PLAN---
@@ -135,15 +109,6 @@ function changePlan() {
   attribution.style.display = "none";
   nextStepBtn.style.display = "block";
   confirm_step_button.style.display = "none";
-}
-
-// ---CONFIRMATION PAGE---
-function Confirm() {
-  console.log("finish");
-  summary_monthly.style.display = "none";
-  summary_yearly.style.display = "none";
-  confirmation.style.display = "block";
-  btnDiv.style.visibility = "hidden";
 }
 
 // ----SHOW YEARLY PLAN OR MONTHLY PLAN----
@@ -258,29 +223,26 @@ function addonSelection(checkbox) {
     console.log("addon_price", addon_price);
 
     if (addonText) {
-      if(switch_div.checked){
+      if (switch_div.checked) {
         document.querySelector(`.addonChoiseY${i + 1}`).textContent = addonText;
         document.querySelector(`.addonPriceY${i + 1}`).textContent =
           addon_price_string;
-          addonTotal += addon_price; // Accumulate the prices of selected add-ons
+        addonTotal += addon_price; // Accumulate the prices of selected add-ons
 
-          console.log("Total addon price:", addonTotal);
+        console.log("Total addon price:", addonTotal);
 
-          let totalElement = document.querySelector(".totalPriceY");
-          totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
-      }
-      else{
-      document.querySelector(`.addonChoise${i + 1}`).textContent = addonText;
-      document.querySelector(`.addonPrice${i + 1}`).textContent =
-        addon_price_string;
+        let totalElement = document.querySelector(".totalPriceY");
+        totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
+      } else {
+        document.querySelector(`.addonChoise${i + 1}`).textContent = addonText;
+        document.querySelector(`.addonPrice${i + 1}`).textContent =
+          addon_price_string;
         addonTotal += addon_price; // Accumulate the prices of selected add-ons
         console.log("Total addon price:", addonTotal);
-      
+
         let totalElement = document.querySelector(".totalPriceM");
         totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
       }
-     
     }
   }
-
 }

@@ -16,60 +16,63 @@
   </head>
 
   <body>
-    <div class="content">
+    <div  class="content">
+      <div id="destop_view">
       <!-- Sidebar start -->
       <div class="sidebar">
-        <div class="steps_mobile">
-          <img
-            class="number_sidebar"
-            id="one_sidebar"
-            src="./assets/images/number-1 (1).png"
-            alt="1"
-          />
+        <div class="toggle-content-steps_mobile">
+          <div class="steps_mobile">
+            <img
+              class="number_sidebar"
+              id="one_sidebar"
+              src="./assets/images/number-1 (1).png"
+              alt="1"
+            />
 
-          <img
-            class="number_sidebar"
-            id="one_sidebar_color"
-            src="assets/images/icons8-1st-48.png"
-            alt="1"
-          />
+            <img
+              class="number_sidebar"
+              id="one_sidebar_color"
+              src="assets/images/icons8-1st-48.png"
+              alt="1"
+            />
 
-          <img
-            class="number_sidebar"
-            id="two_sidebar"
-            src="assets/images/icons8-circled-2-50.png"
-            alt="1"
-          />
-          <img
-            class="number_sidebar"
-            id="two_sidebar_color"
-            src="assets/images/icons8-circled-2-48.png"
-            alt="1"
-          />
-          <img
-            class="number_sidebar"
-            id="three_sidebar"
-            src="assets/images/icons8-number-50.png"
-            alt="1"
-          />
-          <img
-            class="number_sidebar"
-            id="three_sidebar_color"
-            src="assets/images/icons8-circled-3-48.png"
-            alt="1"
-          />
-          <img
-            class="number_sidebar"
-            id="four_sidebar"
-            src="assets/images/icons8-circled-4-50.png"
-            alt="1"
-          />
-          <img
-            class="number_sidebar"
-            id="four_sidebar_color"
-            src="assets/images/icons8-circled-4-48.png"
-            alt="1"
-          />
+            <img
+              class="number_sidebar"
+              id="two_sidebar"
+              src="assets/images/icons8-circled-2-50.png"
+              alt="1"
+            />
+            <img
+              class="number_sidebar"
+              id="two_sidebar_color"
+              src="assets/images/icons8-circled-2-48.png"
+              alt="1"
+            />
+            <img
+              class="number_sidebar"
+              id="three_sidebar"
+              src="assets/images/icons8-number-50.png"
+              alt="1"
+            />
+            <img
+              class="number_sidebar"
+              id="three_sidebar_color"
+              src="assets/images/icons8-circled-3-48.png"
+              alt="1"
+            />
+            <img
+              class="number_sidebar"
+              id="four_sidebar"
+              src="assets/images/icons8-circled-4-50.png"
+              alt="1"
+            />
+            <img
+              class="number_sidebar"
+              id="four_sidebar_color"
+              src="assets/images/icons8-circled-4-48.png"
+              alt="1"
+            />
+          </div>
         </div>
       </div>
       <div class="toggle-content-steps_desktop">
@@ -84,7 +87,7 @@
       <!-- Sidebar end -->
 
       <!-- Step 1 start -->
-      <div id="toggle-content-form">
+      <div id="toggle-content-form" class="current-page">
         <div class="form">
           <h1>Personal info</h1>
           <h2>Please provide your name, email address, and phone number.</h2>
@@ -150,7 +153,7 @@
                 onclick="planSelection(this.value)"
                 value="Pro"
               >
-              <img src="./assets/images/icon-pro.svg" alt="pro" />
+                <img src="./assets/images/icon-pro.svg" alt="pro" />
                 <h3>Pro</h3>
                 <h4 id="proPriceM">$15/mo</h4>
               </button>
@@ -188,7 +191,7 @@
                 onclick="planSelection(this.value)"
                 value="Pro"
               >
-              <img src="./assets/images/icon-pro.svg" alt="pro" />
+                <img src="./assets/images/icon-pro.svg" alt="pro" />
                 <h3>Pro</h3>
                 <h4 id="proPriceY">$150/yr</h4>
                 <h5>2 months free</h5>
@@ -402,25 +405,23 @@
       </div>
       <!-- Step 5 end -->
       <div id="toggle-content-btn_div">
-        <div  class="btn_div">
+        <div class="btn_div">
           <button id="go_back_button" onclick="goBack()">Go Back</button>
-
+          
           <button id="next_step_button" onclick="nextStep()">Next Step</button>
-
+          
           <button id="confirm_step_button" onclick="Confirm()">Confirm</button>
         </div>
-
       </div>
-        <div id="toggle-content-attribution">
-          <div class="attribution">
-            Challenge by
-            <a
-              href="https://www.frontendmentor.io?ref=challenge"
-              target="_blank"
-              >Frontend Mentor</a
-            >. Coded by <a href="#">Your Name Here</a>.
-          </div>
+      </div>
+      <div id="toggle-content-attribution">
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Your Name Here</a>.
         </div>
+      </div>
     </div>
 
     <script type="text/javascript" src="main.js"></script>
