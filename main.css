@@ -48,16 +48,18 @@
   
   }
 
+  #form_btn{
+    display: flex;
+    flex-direction: column;
+  }
+
 
 /* destop */
 @media only screen and (min-width: 992px) {
     
   .steps_desktop{
         display: flex;
-        flex-direction: column ;
-        /* color:#edf4fe; */
-        
-
+        flex-direction: column ;        
         background: url("assets/images/bg-sidebar-desktop.svg");
         background-repeat: no-repeat;
         background-size: auto;
@@ -66,8 +68,11 @@
         height: 100vh; 
         width: 50vh; 
         font-family:ubuntu-regular ;
+        align-items: center;
+        gap: 3%;
         /* justify-content: space-around; */
       }
+    
 
     .toggle-content-steps_mobile{
        display: none;
@@ -87,10 +92,12 @@
       #destop_view {
           display: flex;
           flex-direction: row;
-          /* justify-content: space-between; */
-          /* width: 50vh;  */
+          width: 50vh; 
           width: 100%; 
           align-items: center;
+          justify-content: flex-start;
+          gap:10%;
+}
   
         } 
       
@@ -101,16 +108,18 @@
           justify-content: space-between;
       }
           
-      .sidebar, .toggle-content-steps_mobile, .steps_mobile{
+      /* .toggle-content-steps_mobile, .steps_mobile{
         display: none;
       } 
-     
-    }
+      */
+    
 
 
 
 .sidebar{
-    display: none;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
   }
 
      
@@ -122,12 +131,12 @@
   visibility:hidden;
   }
 
-#one_sidebar,#two_sidebar_color,#three_sidebar_color,#four_sidebar_color,#confirm_step_button,
+#oneM,#two_colorM,#three_colorM,#four_colorM,#one,#two_color,#three_color,#four_color,#confirm_step_button,
 #toggle-content-addons_monthly,#toggle-content-addons_yearly,#toggle-content-plan,#toggle-content-summary_monthly,#toggle-content-summary_yearly,#toggle-content-confirmation,#toggle-content-attribution,#toggle-content-steps_desktop,#toggle-content-yearly_plan{
       display: none;
   }
   
-#toggle-content-form, #next_step_button_div #toggle-content-monthly_plan #toggle-content-btn_div,#BTNDIV2{
+#toggle-content-form, #next_step_button_div #toggle-content-monthly_plan #toggle-content-btn_div,#BTNDIV2,.step_numbers{
       display: block;
   }
 
@@ -177,8 +186,6 @@
 }
         
 
-                
-                
 .steps_mobile {
     display: flex;
     align-self: center;
@@ -188,10 +195,22 @@
     justify-content: space-around;
     align-items: center;
 }
+                
+.step_numbers {
+    display: flex;
+    align-self: center;
+    width: 50%;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    align-items: center;
+}
+                
+                
 
 
 .number_sidebar {
-    height: 1.5em;
+    height: 3em;
 }
 
     
@@ -421,6 +440,8 @@ a{
 
   #addons{
     display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
     align-items: center;
     margin: 0.5rem;
     background-color: hsl(231, 100%, 99%);
@@ -447,3 +468,28 @@ a{
 .confirmation>h2{
   text-align: center;
 }
+
+.number_and_step{
+  display: flex;
+  align-items: center;
+}
+.step{
+  display: flex;
+  flex-direction: column;
+}
+
+.step :first-child{
+  color : hsl(231, 11%, 63%);
+  font-family:ubuntu-medium ;
+ 
+
+}
+.step :last-child{
+  color:#edf4fe;
+  font-family:ubuntu-medium ;
+font-size: small;
+
+}
+
+
+
