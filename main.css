@@ -90,7 +90,7 @@
          background-position: left;
       }   */
 
-      #destop_view {
+      #desktop_view {
           display: flex;
           flex-direction: row;
           width: 50vh; 

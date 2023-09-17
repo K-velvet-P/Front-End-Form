@@ -91,37 +91,37 @@ function validateForm() {
     nextStep();
   }
 }
-// function validateForm() {
-//   let error_message = [];
-//   let idWithError = null;
-//   let form_errors;
+function validateForm() {
+  let error_message = [];
+  let idWithError = null;
+  let form_errors;
 
-//   const fields = [fullName.value, email.value, phone_number.value];
+  const fields = [fullName.value, email.value, phone_number.value];
 
-//   if (fields.some((field) => field === "" || field === null)) {
-//     error_message.push("This field is required");
-//     console.log("error_message1", error_message);
-//   }
+  if (fields.some((field) => field === "" || field === null)) {
+    error_message.push("This field is required");
+    console.log("error_message1", error_message);
+  }
 
-//   if (fields[0] === "" || fields[0] === null) {
-//     idWithError = "name";
-//     form_errors = document.getElementById("error_div1");
-//   } else if (fields[1] === "" || fields[1] === null) {
-//     idWithError = "email";
-//     form_errors = document.getElementById("error_div2");
-//   } else if (fields[2] === "" || fields[2] === null) {
-//     idWithError = "number";
-//     form_errors = document.getElementById("error_div3");
-//   }
+  if (fields[0] === "" || fields[0] === null) {
+    idWithError = "name";
+    form_errors = document.getElementById("error_div1");
+  } else if (fields[1] === "" || fields[1] === null) {
+    idWithError = "email";
+    form_errors = document.getElementById("error_div2");
+  } else if (fields[2] === "" || fields[2] === null) {
+    idWithError = "number";
+    form_errors = document.getElementById("error_div3");
+  }
 
-//   if (error_message.length > 0) {
-//     console.log("meee");
-//     form_errors.innerText = error_message.join(", ");
-//     document.getElementById(idWithError).style.border = "1px solid #ef1c1c";
-//   } else {
-//     nextStep();
-//   }
-// }
+  if (error_message.length > 0) {
+    console.log("meee");
+    form_errors.innerText = error_message.join(", ");
+    document.getElementById(idWithError).style.border = "1px solid #ef1c1c";
+  } else {
+    nextStep();
+  }
+}
 
 //----------------- HELPER FUNCTIONS -----------------
 function getCurrentPageIndex() {
@@ -256,8 +256,18 @@ function changePlan() {
 
 // ----ADD ONS----
 
-function planSelection(value) {
+
+let planPrice;
+
+
+function planSelection(value, price) {
   const planChoice = value;
+  planPrice = data-price;button.getAttribute('data-price')
+
+  console.log("planPrice22",planPrice);
+  console.log("price",data-price);
+  console.log("planChoice", planChoice);
+  console.log("value", value);
   const existingContent = switch_div.checked ? "(yearly)" : "(monthly)";
 
   const updatedContentM = `${planChoice} ${existingContent}`;
@@ -266,13 +276,13 @@ function planSelection(value) {
   const updatedContentY = `${planChoice} ${existingContent}`;
   document.getElementById("planChoiseY").textContent = updatedContentY;
 
-  const priceElementM = document.getElementById(`${value.toLowerCase()}PriceM`);
-  const priceM = priceElementM.textContent;
-
+  const priceElementM = document.getElementById(`${value.toLowerCase()}PriceM`);//get the element
+  const priceM = priceElementM.textContent;//get the price from the element
+  console.log("priceM", priceM);
   const priceElementY = document.getElementById(`${value.toLowerCase()}PriceY`);
   const priceY = priceElementY.textContent;
 
-  document.getElementById("selectedPlanPriceM").textContent = priceM;
+  document.getElementById("selectedPlanPriceM").textContent = priceM;//update the price
   document.getElementById("selectedPlanPriceY").textContent = priceY;
 }
 
@@ -281,44 +291,130 @@ let checkBoxesM = itemFormsM[0].querySelectorAll('input[type="checkbox"]');
 let checkBoxesY = itemFormsM[1].querySelectorAll('input[type="checkbox"]');
 let addonChoise = [];
 
-function addonSelection(checkbox) {
-  const isYearly = switch_div.checked;
-  const itemForms = isYearly ? itemFormsM[1] : itemFormsM[0];
-  const checkBoxes = itemForms.querySelectorAll('input[type="checkbox"]');
 
+// ----ADD ON SELECTION---- 
+
+
+function addonSelection(checkbox) {
   addonChoise = [];
-  checkBoxes.forEach((item, index) => {
+  console.log("meee");
+console.log("planPrice-addonSelection",planPrice);
+  // console.log('addon_price',addon_price);
+  // console.log('Cboxvalue',Cboxvalue);
+
+  checkBoxesM.forEach((item) => {
+    console.log("item", item);
+    // loop all the checkbox item
     if (item.checked) {
-      const data = {
+      //if the check box is checked
+      let data = {
+        // create an object
         item: item.value,
         pricedigit: parseFloat(item.dataset.price),
         pricestring: item.dataset.pricelabel,
       };
-
-      addonChoise.push(data);
-
-      const addonText = data.item;
-      const addonPriceString = data.pricestring;
-      const addonPrice = data.pricedigit;
-
-      const addonClassPrefix = isYearly ? ".addonChoiseY" : ".addonChoise";
-      const addonPriceClassPrefix = isYearly ? ".addonPriceY" : ".addonPrice";
-
-      document.querySelector(`${addonClassPrefix}${index + 1}`).textContent =
-        addonText;
-      document.querySelector(
-        `${addonPriceClassPrefix}${index + 1}`
-      ).textContent = addonPriceString;
-
-      let addonTotal = addonChoise.reduce(
-        (total, addon) => total + addon.pricedigit,
-        0
-      );
-
-      const totalElement = document.querySelector(
-        `.totalPrice${isYearly ? "Y" : "M"}`
-      );
-      totalElement.textContent = `$${addonTotal.toFixed(2)}/mo`;
+      addonChoise.push(data); //stored the objects to result array
     }
   });
+
+  checkBoxesY.forEach((item) => {
+    console.log("item", item);
+    // loop all the checkbox item
+    if (item.checked) {
+      //if the check box is checked
+      let data = {
+        // create an object
+        item: item.value,
+        pricedigit: parseFloat(item.dataset.price),
+        pricestring: item.dataset.pricelabel,
+      };
+      addonChoise.push(data); //stored the objects to result array
+    }
+  });
+
+  console.log("addonChoise", addonChoise);
+
+  let addonTotal = 0;
+  for (let i = 0; i < addonChoise.length; i++) {
+    let addonText = addonChoise[i].item;
+    let addon_price_string = addonChoise[i].pricestring;
+    let addon_price = addonChoise[i].pricedigit;
+
+    console.log("addonText", addonText);
+    console.log("addon_price_string", addon_price_string);
+    console.log("addon_price", addon_price);
+
+    if (addonText) {
+      if(switch_div.checked){
+        document.querySelector(`.addonChoiseY${i + 1}`).textContent = addonText;
+        document.querySelector(`.addonPriceY${i + 1}`).textContent =
+          addon_price_string;
+          addonTotal += addon_price +=planPrice; // Accumulate the prices of selected add-ons
+
+          console.log("Total addon price:", addonTotal);
+
+          let totalElement = document.querySelector(".totalPriceY");
+          totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
+      }
+      else{
+      document.querySelector(`.addonChoise${i + 1}`).textContent = addonText;
+      document.querySelector(`.addonPrice${i + 1}`).textContent =
+        addon_price_string;
+        addonTotal += addon_price+=planPrice; // Accumulate the prices of selected add-ons
+        console.log("Total addon price:", addonTotal);
+      
+        let totalElement = document.querySelector(".totalPriceM");
+        totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
+      }
+     
+    }
+  }
+
 }
+
+
+
+
+// function addonSelection(checkbox) {
+//   const isYearly = switch_div.checked;
+//   const itemForms = isYearly ? itemFormsM[1] : itemFormsM[0];
+//   const checkBoxes = itemForms.querySelectorAll('input[type="checkbox"]');
+
+//   addonChoise = [];
+//   checkBoxes.forEach((item, index) => {
+//     if (item.checked) {
+//       const data = {
+//         item: item.value,
+//         pricedigit: parseFloat(item.dataset.price),
+//         pricestring: item.dataset.pricelabel,
+//       };
+
+//       addonChoise.push(data);
+
+//       const addonText = data.item;
+//       const addonPriceString = data.pricestring;
+//       console.log("m0m0 ", addonPriceString);
+//       const addonPrice = data.pricedigit;
+//       console.log("meme ", addonPrice);
+
+//       const addonClassPrefix = isYearly ? ".addonChoiseY" : ".addonChoise";
+//       const addonPriceClassPrefix = isYearly ? ".addonPriceY" : ".addonPrice";
+
+//       document.querySelector(`${addonClassPrefix}${index + 1}`).textContent =
+//         addonText;
+//       document.querySelector(
+//         `${addonPriceClassPrefix}${index + 1}`
+//       ).textContent = addonPriceString;
+
+//       let addonTotal = addonChoise.reduce(
+//         (total, addon) =>  + total + addon.pricedigit,
+//         0
+//       );
+
+//       const totalElement = document.querySelector(
+//         `.totalPrice${isYearly ? "Y" : "M"}`
+//       );
+//       totalElement.textContent = `$${addonTotal.toFixed(2)}/mo`;
+//     }
+//   });
+// }

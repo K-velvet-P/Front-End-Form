@@ -16,8 +16,8 @@
   </head>
 
   <body>
-    <div class="content">
-      <div id="destop_view">
+    <div role="content" class="content">
+      <div id="desktop_view">
         <!-- Sidebar start -->
         <div class="toggle-content-steps_mobile">
           <div class="sidebar">
@@ -26,7 +26,7 @@
                 <img
                   class="number_sidebar"
                   id="one_sidebar"
-                  src="assets/images/icons8-1st-50 (1).png"
+                  src="assets/images/icons8-1st-50(1).png"
                   alt="1"
                 />
               </div>
@@ -41,7 +41,7 @@
               <div id="twoM">
                 <img
                   class="number_sidebar"
-                  id="two_sidebar"
+                  id="two_sidebarM"
                   src="assets/images/icons8-circled-2-50.png"
                   alt="1"
                 />
@@ -246,8 +246,9 @@
                   <button
                     type="button"
                     class="btn"
-                    onclick="planSelection(this.value)"
+                    onclick="planSelection(this.value, this.data-price)"
                     value="Arcade"
+                    data-price="9"
                   >
                     <img src="./assets/images/icon-arcade.svg" alt="arcade" />
                     <h3>Arcade</h3>
@@ -259,6 +260,7 @@
                     class="btn"
                     onclick="planSelection(this.value)"
                     value="Advanced"
+                    data-price="12"
                   >
                     <img
                       src="./assets/images/icon-advanced.svg"
@@ -272,6 +274,7 @@
                     class="btn"
                     onclick="planSelection(this.value)"
                     value="Pro"
+                    data-price="15"
                   >
                     <img src="./assets/images/icon-pro.svg" alt="pro" />
                     <h3>Pro</h3>
@@ -287,6 +290,8 @@
                     class="btn"
                     onclick="planSelection(this.value)"
                     value="Arcade"
+                    data-price="90"
+
                   >
                     <img src="./assets/images/icon-arcade.svg" alt="arcade" />
                     <h3>Arcade</h3>
@@ -299,6 +304,7 @@
                     class="btn"
                     onclick="planSelection(this.value)"
                     value="Advanced"
+                    data-price="120"
                   >
                     <img
                       src="./assets/images/icon-advanced.svg"
@@ -313,6 +319,7 @@
                     class="btn"
                     onclick="planSelection(this.value)"
                     value="Pro"
+                    data-price="150"
                   >
                     <img src="./assets/images/icon-pro.svg" alt="pro" />
                     <h3>Pro</h3>
@@ -344,7 +351,8 @@
             <div class="add-ons">
               <h1>Pick add-ons</h1>
               <h2>Add-ons help enhance your gaming experience.</h2>
-              <div id="addons" class="addons1">
+              <!-- <div id="addons" class="addons1"> -->
+              <div class="addons1">
                 <input
                   class="addon"
                   id="addon1"
@@ -361,7 +369,8 @@
                 >
                 <p for="addon1" id="Online servicePrice">+$1/mo</p>
               </div>
-              <div id="addons" class="addons1">
+              <!-- <div id="addons" class="addons1"> -->
+              <div class="addons1">
                 <input
                   class="addon"
                   id="addon2"
@@ -376,7 +385,8 @@
                 <h4>Extra 1TB of cloud save</h4>
                 <p id="Larger storagePrice">+$2/mo</p>
               </div>
-              <div id="addons" class="addons1">
+              <!-- <div id="addons" class="addons1"> -->
+              <div class="addons1">
                 <input
                   class="addon"
                   id="addon3"
