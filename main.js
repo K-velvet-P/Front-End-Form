@@ -2,7 +2,6 @@ const form = document.getElementById("toggle-content-form");
 const plan = document.getElementById("toggle-content-plan");
 const addons_monthly = document.getElementById("toggle-content-addons_monthly");
 const addons_yearly = document.getElementById("toggle-content-addons_yearly");
-
 const summary_monthly = document.getElementById(
   "toggle-content-summary_monthly"
 );
@@ -19,6 +18,11 @@ const switch_div = document.getElementById("plan_switch");
 
 const btnDiv = document.getElementById("toggle-content-btn_div");
 
+const fullName = document.getElementById("name");
+const email = document.getElementById("email");
+const phone_number = document.getElementById("number");
+
+const next_step_button = document.getElementById("next_step_button");
 const mobileView = document.getElementsByClassName(
   "toggle-content-steps_mobile"
 );
@@ -26,6 +30,7 @@ const mobileView = document.getElementsByClassName(
 //-----------------STEP NUMBER ICONS -----------------
 
 let currentPageIndex;
+let error_message = [];
 
 const pageArray = [
   form,
@@ -51,6 +56,72 @@ const stepNumbersArrray_colorM = [
   "three_colorM",
   "four_colorM",
 ];
+
+const submit_button = document.getElementById("next_step_button");
+
+submit_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  validateForm();
+});
+
+function validateForm() {
+  const fields = [
+    { input: document.getElementById("name"), errorDiv: "error_div1", errorMessage: "Full name is required" },
+    { input: document.getElementById("email"), errorDiv: "error_div2", errorMessage: "Email is required" },
+    { input: document.getElementById("number"), errorDiv: "error_div3", errorMessage: "Phone number is required" }
+  ];
+
+  let idWithError = null;
+
+  fields.forEach((field) => {
+    if (field.input.value === "") {
+      document.getElementById(field.errorDiv).innerText = field.errorMessage;
+      field.input.style.border = "1px solid #ef1c1c";
+      if (idWithError === null) {
+        idWithError = field.errorDiv;
+      }
+    } else {
+      console.log("field", field);
+      document.getElementById(field.errorDiv).innerText = ""; // Clear error message
+      field.input.style.border = "1px solid #ccc"; // Reset border
+    }
+  });
+
+  if (idWithError === null) {
+    nextStep();
+  }
+}
+// function validateForm() {
+//   let error_message = [];
+//   let idWithError = null;
+//   let form_errors;
+
+//   const fields = [fullName.value, email.value, phone_number.value];
+
+//   if (fields.some((field) => field === "" || field === null)) {
+//     error_message.push("This field is required");
+//     console.log("error_message1", error_message);
+//   }
+
+//   if (fields[0] === "" || fields[0] === null) {
+//     idWithError = "name";
+//     form_errors = document.getElementById("error_div1");
+//   } else if (fields[1] === "" || fields[1] === null) {
+//     idWithError = "email";
+//     form_errors = document.getElementById("error_div2");
+//   } else if (fields[2] === "" || fields[2] === null) {
+//     idWithError = "number";
+//     form_errors = document.getElementById("error_div3");
+//   }
+
+//   if (error_message.length > 0) {
+//     console.log("meee");
+//     form_errors.innerText = error_message.join(", ");
+//     document.getElementById(idWithError).style.border = "1px solid #ef1c1c";
+//   } else {
+//     nextStep();
+//   }
+// }
 
 //----------------- HELPER FUNCTIONS -----------------
 function getCurrentPageIndex() {

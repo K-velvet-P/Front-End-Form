@@ -26,7 +26,7 @@
                 <img
                   class="number_sidebar"
                   id="one_sidebar"
-                  src="./assets/images/number-1 (1).png"
+                  src="assets/images/icons8-1st-50 (1).png"
                   alt="1"
                 />
               </div>
@@ -96,7 +96,7 @@
                 <img
                   class="number_sidebar"
                   id="one_sidebar"
-                  src="./assets/images/number-1 (1).png"
+                  src="assets/images/icons8-1st-50 (1).png"
                   alt="1"
                 />
               </div>
@@ -191,30 +191,46 @@
               <h2>
                 Please provide your name, email address, and phone number.
               </h2>
-              <div id="form_content">
-                <label for="name">Name</label>
+              <form id="form_content">
+                <div class="form_lables form">
+                  <label for="name">Name</label>
+                  <label for="name" id="error_div1"></label>
+                </div>
                 <input
+                  class="form_input"
                   id="name"
                   type="text"
                   name="name"
                   placeholder="e.g. Stephen King"
-                  required
+                  autocomplete="on"
                 />
-                <label for="email">Email Address</label>
+
+                <div class="form_lables form">
+                  <label for="email">Email Address</label>
+                  <label for="email" id="error_div2"> </label>
+                </div>
                 <input
+                  class="form_input"
                   id="email"
                   type="email"
                   name="email"
                   placeholder="e.g. stephenking@lorem.com"
+                  autocomplete="on"
                 />
-                <label for="number">Phone Number</label>
+                <div class="form_lables form">
+                  <label for="number">Phone Number</label>
+                  <label for="number" id="error_div3"></label>
+                </div>
                 <input
+                  class="form_input"
                   id="number"
                   type="text"
                   name="number"
                   placeholder="  e.g. +1 234 567 890"
+                  autocomplete="on"
                 />
-              </div>
+                <!-- <input type="submit" id="submit_button" /> -->
+              </form>
             </div>
           </div>
 
@@ -328,7 +344,7 @@
             <div class="add-ons">
               <h1>Pick add-ons</h1>
               <h2>Add-ons help enhance your gaming experience.</h2>
-              <div id="addons">
+              <div id="addons" class="addons1">
                 <input
                   class="addon"
                   id="addon1"
@@ -339,11 +355,13 @@
                   data-price="1"
                   data-pricelabel="+$1/mo"
                 />
-                <h3>Online service</h3>
-                <h4>Access to multiplayer games</h4>
-                <p id="Online servicePrice">+$1/mo</p>
+                <label class="label2" for="addon1">Online service</label>
+                <label for="addon1" class="label"
+                  >Access to multiplayer games</label
+                >
+                <p for="addon1" id="Online servicePrice">+$1/mo</p>
               </div>
-              <div id="addons">
+              <div id="addons" class="addons1">
                 <input
                   class="addon"
                   id="addon2"
@@ -358,7 +376,7 @@
                 <h4>Extra 1TB of cloud save</h4>
                 <p id="Larger storagePrice">+$2/mo</p>
               </div>
-              <div id="addons">
+              <div id="addons" class="addons1">
                 <input
                   class="addon"
                   id="addon3"
@@ -377,11 +395,11 @@
           </div>
 
           <div id="toggle-content-addons_yearly">
-            <div class="add-ons">
+            <div class="add-ons" class="addons1">
               <h1>Pick add-ons</h1>
               <h2>Add-ons help enhance your gaming experience.</h2>
 
-              <div id="addons">
+              <div class="addons1" id="addons">
                 <input
                   class="addon"
                   id="addon3"
@@ -396,7 +414,7 @@
                 <h4>Access to multiplayer games</h4>
                 <p>+$10/yr</p>
               </div>
-              <div id="addons">
+              <div class="addons1" id="addons">
                 <input
                   class="addon"
                   id="addon3"
@@ -411,7 +429,7 @@
                 <h4>Extra 1TB of cloud save</h4>
                 <p>+$20/yr</p>
               </div>
-              <div id="addons">
+              <div class="addons1" id="addons">
                 <input
                   class="addon"
                   id="addon3"
@@ -473,7 +491,7 @@
                 <div class="summary1">
                   <p id="planChoiseY"></p>
                   <p id="selectedPlanPriceY">price</p>
-                  <a href="javascript:changePlan()">Change</a>
+                  <a id="change-a-tag" href="javascript:changePlan()">Change</a>
                 </div>
                 <!-- //add the h4 tag from the button here. -->
                 <div class="summary2">
@@ -518,7 +536,7 @@
             <div class="btn_div">
               <button id="go_back_button" onclick="goBack()">Go Back</button>
 
-              <button id="next_step_button" onclick="nextStep()">
+              <button id="next_step_button" type="submit" form="form_content">
                 Next Step
               </button>
 
