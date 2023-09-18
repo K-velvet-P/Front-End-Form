@@ -66,9 +66,21 @@ submit_button.addEventListener("click", (e) => {
 
 function validateForm() {
   const fields = [
-    { input: document.getElementById("name"), errorDiv: "error_div1", errorMessage: "Full name is required" },
-    { input: document.getElementById("email"), errorDiv: "error_div2", errorMessage: "Email is required" },
-    { input: document.getElementById("number"), errorDiv: "error_div3", errorMessage: "Phone number is required" }
+    {
+      input: document.getElementById("name"),
+      errorDiv: "error_div1",
+      errorMessage: "Full name is required",
+    },
+    {
+      input: document.getElementById("email"),
+      errorDiv: "error_div2",
+      errorMessage: "Email is required",
+    },
+    {
+      input: document.getElementById("number"),
+      errorDiv: "error_div3",
+      errorMessage: "Phone number is required",
+    },
   ];
 
   let idWithError = null;
@@ -76,14 +88,14 @@ function validateForm() {
   fields.forEach((field) => {
     if (field.input.value === "") {
       document.getElementById(field.errorDiv).innerText = field.errorMessage;
-      field.input.style.border = "1px solid #ef1c1c";
+      field.input.style.border = "1px solid #ee374a";
       if (idWithError === null) {
         idWithError = field.errorDiv;
       }
     } else {
       console.log("field", field);
       document.getElementById(field.errorDiv).innerText = ""; // Clear error message
-      field.input.style.border = "1px solid #ccc"; // Reset border
+      field.input.style.border = "1px solid #d6d9e6"; // Reset border
     }
   });
 
@@ -256,33 +268,38 @@ function changePlan() {
 
 // ----ADD ONS----
 
-
 let planPrice;
-
 
 function planSelection(value, price) {
   const planChoice = value;
-  planPrice = data-price;button.getAttribute('data-price')
-
-  console.log("planPrice22",planPrice);
-  console.log("price",data-price);
   console.log("planChoice", planChoice);
-  console.log("value", value);
+  planPrice = price;
+  console.log("price", price);
+  console.log("planPrice", planPrice);
+  // button.getAttribute("data-price");
+
+  // console.log("planPrice22", planPrice);
+  // console.log("price", data - price);
+  // console.log("planChoice", planChoice);
+  // console.log("value", value);
   const existingContent = switch_div.checked ? "(yearly)" : "(monthly)";
+  console.log("existingContent", existingContent);
 
   const updatedContentM = `${planChoice} ${existingContent}`;
   document.getElementById("planChoiseM").textContent = updatedContentM;
+  console.log("updatedContentM", updatedContentM);
 
   const updatedContentY = `${planChoice} ${existingContent}`;
   document.getElementById("planChoiseY").textContent = updatedContentY;
+  console.log("updatedContentY", updatedContentY);
 
-  const priceElementM = document.getElementById(`${value.toLowerCase()}PriceM`);//get the element
-  const priceM = priceElementM.textContent;//get the price from the element
+  const priceElementM = document.getElementById(`${value.toLowerCase()}PriceM`); //get the element
+  const priceM = priceElementM.textContent; //get the price from the element
   console.log("priceM", priceM);
   const priceElementY = document.getElementById(`${value.toLowerCase()}PriceY`);
   const priceY = priceElementY.textContent;
 
-  document.getElementById("selectedPlanPriceM").textContent = priceM;//update the price
+  document.getElementById("selectedPlanPriceM").textContent = priceM; //update the price
   document.getElementById("selectedPlanPriceY").textContent = priceY;
 }
 
@@ -291,19 +308,17 @@ let checkBoxesM = itemFormsM[0].querySelectorAll('input[type="checkbox"]');
 let checkBoxesY = itemFormsM[1].querySelectorAll('input[type="checkbox"]');
 let addonChoise = [];
 
-
-// ----ADD ON SELECTION---- 
-
+// ----ADD ON SELECTION----
 
 function addonSelection(checkbox) {
   addonChoise = [];
-  console.log("meee");
-console.log("planPrice-addonSelection",planPrice);
+  // console.log("meee");
+  // console.log("planPrice-addonSelection", planPrice);
   // console.log('addon_price',addon_price);
   // console.log('Cboxvalue',Cboxvalue);
 
   checkBoxesM.forEach((item) => {
-    console.log("item", item);
+    // console.log("item", item);
     // loop all the checkbox item
     if (item.checked) {
       //if the check box is checked
@@ -318,7 +333,7 @@ console.log("planPrice-addonSelection",planPrice);
   });
 
   checkBoxesY.forEach((item) => {
-    console.log("item", item);
+    // console.log("item", item);
     // loop all the checkbox item
     if (item.checked) {
       //if the check box is checked
@@ -332,7 +347,7 @@ console.log("planPrice-addonSelection",planPrice);
     }
   });
 
-  console.log("addonChoise", addonChoise);
+  // console.log("addonChoise", addonChoise);
 
   let addonTotal = 0;
   for (let i = 0; i < addonChoise.length; i++) {
@@ -340,40 +355,34 @@ console.log("planPrice-addonSelection",planPrice);
     let addon_price_string = addonChoise[i].pricestring;
     let addon_price = addonChoise[i].pricedigit;
 
-    console.log("addonText", addonText);
-    console.log("addon_price_string", addon_price_string);
-    console.log("addon_price", addon_price);
+    // console.log("addonText", addonText);
+    // console.log("addon_price_string", addon_price_string);
+    // console.log("addon_price", addon_price);
 
     if (addonText) {
-      if(switch_div.checked){
+      if (switch_div.checked) {
         document.querySelector(`.addonChoiseY${i + 1}`).textContent = addonText;
         document.querySelector(`.addonPriceY${i + 1}`).textContent =
           addon_price_string;
-          addonTotal += addon_price +=planPrice; // Accumulate the prices of selected add-ons
+        addonTotal += addon_price += planPrice; // Accumulate the prices of selected add-ons
 
-          console.log("Total addon price:", addonTotal);
+        // console.log("Total addon price:", addonTotal);
 
-          let totalElement = document.querySelector(".totalPriceY");
-          totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
-      }
-      else{
-      document.querySelector(`.addonChoise${i + 1}`).textContent = addonText;
-      document.querySelector(`.addonPrice${i + 1}`).textContent =
-        addon_price_string;
-        addonTotal += addon_price+=planPrice; // Accumulate the prices of selected add-ons
-        console.log("Total addon price:", addonTotal);
-      
+        let totalElement = document.querySelector(".totalPriceY");
+        totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
+      } else {
+        document.querySelector(`.addonChoise${i + 1}`).textContent = addonText;
+        document.querySelector(`.addonPrice${i + 1}`).textContent =
+          addon_price_string;
+        addonTotal += addon_price; // Accumulate the prices of selected add-ons
+        // console.log("Total addon price:", addonTotal);
+
         let totalElement = document.querySelector(".totalPriceM");
         totalElement.textContent = `$+${addonTotal.toFixed(2)}/mo`;
       }
-     
     }
   }
-
 }
-
-
-
 
 // function addonSelection(checkbox) {
 //   const isYearly = switch_div.checked;

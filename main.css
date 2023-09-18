@@ -1,41 +1,56 @@
 @font-face {
-    font-family: ubuntu-bold;
-    src: url(./assets/fonts/Ubuntu-Bold.ttf);
-    font-weight: bold;
-  }
+  font-family: ubuntu-bold;
+  src: url(./assets/fonts/Ubuntu-Bold.ttf);
+  font-weight: 700;
+}
 
 @font-face {
-    font-family: ubuntu-medium;;
-    src: url(./assets/fonts/Ubuntu-Medium.ttf);
-    font-weight: medium;
-  }
+  font-family: ubuntu-medium;
+  src: url(./assets/fonts/Ubuntu-Medium.ttf);
+  font-weight: 500;
+}
 @font-face {
-    font-family:ubuntu-regular;
-    src: url(./assets/fonts/Ubuntu-Regular.ttf);
-    font-weight: regular;
+  font-family: ubuntu-regular;
+  src: url(./assets/fonts/Ubuntu-Regular.ttf);
+  font-weight: 400;
+}
+
+:root {
+  --back-ground-color: #eff5ff;
+  --border-color: #d6d9e6;
+  --denim: #022959;
+  --gray: #9699aa;
+  --light-blue: #abbcff;
+  --light-gray: #d6d9e6;
+  --orange: #ffaf7e;
+  --pink: #f9818e;
+  --purple: #483eff;
+  --red-errors: #ee374a;
+  --skyblue: #bee2fd;
+  --v-light-gray: #f8f9ff;
+  --white: #ffffff;
+}
+
+/* phone screen  */
+@media only screen and (max-width: 992px) {
+  .steps_desktop {
+    display: none;
+  }
+  body {
+    /* height: 100vh; */
+    /* border: 1px solid blue; */
+    background-color: #edf4fe;
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
   }
 
-  /* phone screen  */
-@media only screen and (max-width: 992px){
-    .steps_desktop{
-        display: none;
-    }
-    body{
-      /* height: 100vh; */
-      /* border: 1px solid blue; */
-      background-color: #edf4fe;
-      height: 10vh;    
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url("./assets/images/bg-sidebar-mobile.svg");
-    }
-
-    .content{
-      /* height: 100vh; */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      
+  .content {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .sidebar {
@@ -43,43 +58,37 @@
     display: flex;
     justify-content: space-around;
     background-repeat: no-repeat;
+  }
 }
-  
-  
-  }
 
-  #form_btn{
-    display: flex;
-    flex-direction: column;
-  }
-
-  
+#form_btn {
+  display: flex;
+  flex-direction: column;
+}
 
 /* destop */
-@media only screen and (min-width: 992px) {
-    
-  .steps_desktop{
-        display: flex;
-        flex-direction: column ;        
-        background: url("assets/images/bg-sidebar-desktop.svg");
-        background-repeat: no-repeat;
-        background-size: auto;
-        background-size: cover;
-        /* background-attachment: fixed;  */
-        height: 100vh; 
-        width: 50vh; 
-        font-family:ubuntu-regular ;
-        align-items: center;
-        gap: 3%;
-        /* justify-content: space-around; */
-      }
-    
+@media only screen and (min-width: 993px) {
+  .steps_desktop {
+    display: flex;
+    flex-direction: column;
+    background: url("assets/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    /* background-attachment: fixed;  */
+    height: 100vh;
+    width: 50vh;
+    font-family: ubuntu-regular;
+    align-items: center;
+    gap: 3%;
+    /* justify-content: space-around; */
+  }
 
-    .toggle-content-steps_mobile{
-       display: none;
-      }
+  .toggle-content-steps_mobile {
+    display: none;
+  }
 
-      /* body{
+  /* body{
         height: 100vh; 
         border: 1px solid blue; 
          background-color: #edf4fe; 
@@ -90,230 +99,241 @@
          background-position: left;
       }   */
 
-      #desktop_view {
-          display: flex;
-          flex-direction: row;
-          width: 50vh; 
-          width: 100%; 
-          align-items: center;
-          justify-content: flex-start;
-          gap:10%;
+  #desktop_view {
+    display: flex;
+    flex-direction: row;
+    width: 50vh;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10%;
+  }
 }
-  
-        } 
-      
-      .content {
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-      }
-          
-      /* .toggle-content-steps_mobile, .steps_mobile{
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .toggle-content-steps_mobile, .steps_mobile{
         display: none;
       } 
       */
-    
 
-
-
-.sidebar{
-    /* display: block; */
-    display: flex;
-    justify-content: center;
-  }
-
-     
-
- 
-
-
-#go_back_button{
-  visibility:hidden;
-  }
-
-#oneM,#two_colorM,#three_colorM,#four_colorM,#one,#two_color,#three_color,#four_color,#confirm_step_button,
-#toggle-content-addons_monthly,#toggle-content-addons_yearly,#toggle-content-plan,#toggle-content-summary_monthly,#toggle-content-summary_yearly,#toggle-content-confirmation,#toggle-content-attribution,#toggle-content-steps_desktop,#toggle-content-yearly_plan{
-      display: none;
-  }
-  
-#toggle-content-form, #next_step_button_div #toggle-content-monthly_plan #toggle-content-btn_div,#BTNDIV2,.step_numbers{
-      display: block;
-  }
-
-
-  #error_div1,#error_div2,#error_div3{
-    color: #ef1c1c;
-  }
-  
-  
-
-    
-
-
-
-    
-.form,.plan,.add-ons,.summary,.confirmation,.attribution {
-    background-color:white ;
-    border-radius: 10px;
-    /* padding: 1rem;  */
-    margin: 10px;
-    }
-    
-.form{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    /* align-items: center; */
-    }
-
-    #form_content{
-      display: flex;
-      flex-direction: column;
-    }
-    
-    
-   #form_content>input{
-   margin-bottom: 1rem;
-   padding: 0.7rem;
-   border: 1px solid hsl(229, 24%, 87%);  
-   border-radius: 5px;
-     }
-  
-    
-    
-#form_content>label{
-    color:#153459;
-    font-family: ubuntu-regular;
-    margin-bottom: 0.3rem;  
+.sidebar {
+  /* display: block; */
+  display: flex;
+  justify-content: center;
 }
-        
 
-.steps_mobile {
-    display: flex;
-    align-self: center;
-    width: 50%;
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: space-around;
-    align-items: center;
+#go_back_button {
+  visibility: hidden;
 }
-                
+
+#oneM,
+#two_colorM,
+#three_colorM,
+#four_colorM,
+#one,
+#two_color,
+#three_color,
+#four_color,
+#confirm_step_button,
+#toggle-content-addons_monthly,
+#toggle-content-addons_yearly,
+#toggle-content-plan,
+#toggle-content-summary_monthly,
+#toggle-content-summary_yearly,
+#toggle-content-confirmation,
+#toggle-content-attribution,
+#toggle-content-steps_desktop,
+#toggle-content-yearly_plan {
+  display: none;
+}
+
+#toggle-content-form,
+#next_step_button_div #toggle-content-monthly_plan #toggle-content-btn_div,
+#BTNDIV2,
 .step_numbers {
-    display: flex;
-    align-self: center;
-    width: 50%;
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: space-around;
-    align-items: center;
-}
-                
-                
-
-
-.number_sidebar {
-    height: 3em;
+  display: block;
 }
 
-    
-h1{
-    color:#153459;
-    font-family: ubuntu-bold;
+#error_div1,
+#error_div2,
+#error_div3 {
+  color: var(--red-errors);
+  font-family: ubuntu-bold;
 }
 
-
-h2{
-  font-family: ubuntu-regular;
-  color:hsl(231, 11%, 63%);
-  
+.form,
+.plan,
+.add-ons,
+.summary,
+.confirmation,
+.attribution {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 10px;
 }
 
-h3{
-  color:hsl(213, 96%, 18%);
-  font-family: ubuntu-medium;;
-  font-size: 1.2em;
-}
-
-h4{
-  font-family: ubuntu-regular;
-  color:hsl(231, 11%, 63%);
-  font-size: 1.2em;
-}
-
-
-h5{
-  font-family: ubuntu-regular;
-  color:hsl(213, 96%, 18%);
-  
-}
-
-p{
-  color:hsl(213, 96%, 18%);
-  font-family: ubuntu-regular;
-  font-size: 16px;
-  
-}
-
-.label {
-  font-family: ubuntu-regular;
-  color:hsl(231, 11%, 63%);
-  font-size: 1.2em;
-} 
-.label2 {
-  color:hsl(213, 96%, 18%);
-  font-family: ubuntu-medium;;
-  font-size: 1.2em;
-} 
-
-.btn_div{
-    width: 100%;
-    display: flex;
-    /* border: 1px solid blue; */
-    background-color: white;
-    justify-content: space-between;
-}
-
-#next_step_button{
-    display: flex;
-    align-self: flex-end;
-    color: white;
-    background-color: hsl(213, 96%, 18%);
-    border-radius: 3px;
-    padding: 0.5rem;
-    border: none;
-    margin: 1rem;
-    font-family: ubuntu-regular;
-
-}
-
-#go_back_button{
-    display: flex;
-    align-self: flex-end;
-    color:hsl(231, 11%, 63%);
-    font-family: ubuntu-regular;
-    background-color: white;
-    border-radius: 3px;
-    padding: 0.5rem;
-    border: none;
-    margin: 1rem;
-}
-
-#confirm_step_button{
-    align-self: flex-end;
-    color: white;
-    font-family: ubuntu-regular;
-    background-color:  hsl(243, 100%, 62%);
-    border-radius: 3px;
-    padding: 0.5rem;
-    border: none;
-    margin: 1rem;
-}
-
-#monthly_plan,#yearly_plan{
+.form {
   display: flex;
   flex-direction: column;
-  
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+#form_content {
+  display: flex;
+  flex-direction: column;
+}
+
+#form_content > input {
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: ubuntu-medium;
+}
+
+#form_content > label {
+  color: var(--denim);
+  font-family: ubuntu-regular;
+  margin-bottom: 0.3rem;
+}
+
+.steps_mobile {
+  display: flex;
+  align-self: center;
+  width: 50%;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  align-items: center;
+}
+
+.step_numbers {
+  display: flex;
+  align-self: center;
+  width: 50%;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  align-items: center;
+}
+
+.number_sidebar {
+  height: 3em;
+}
+
+h1 {
+  color: var(--denim);
+  font-family: ubuntu-bold;
+}
+
+h2 {
+  color: var(--gray);
+  font-family: ubuntu-regular;
+}
+
+h3 {
+  color: var(--denim);
+  font-family: ubuntu-medium;
+  font-size: 1.2em;
+}
+
+h4 {
+  font-family: ubuntu-regular;
+  color: var(--gray);
+  font-size: 1.2em;
+}
+
+h5 {
+  font-family: ubuntu-regular;
+  color: var(--denim);
+}
+
+p {
+  color: var(--denim);
+  font-family: ubuntu-regular;
+  font-size: 16px;
+}
+
+/* .label {
+  font-family: ubuntu-regular;
+  color:hsl(231, 11%, 63%);
+  font-size: 1.2em;
+}  */
+.form-lables {
+}
+.label-1 {
+  color: var(--denim);
+  font-family: ubuntu-medium;
+  font-size: 1.2em;
+}
+.label-2 {
+  color: var(--gray);
+  font-family: ubuntu-regular;
+  font-size: 1.2em;
+}
+.label-3 {
+  color: var(--purple);
+  font-family: ubuntu-regular;
+  font-size: 1.2em;
+  margin-left: auto;
+}
+
+.btn_div {
+  width: 100%;
+  display: flex;
+  /* border: 1px solid blue; */
+  background-color: var(--white);
+  justify-content: space-between;
+}
+
+#next_step_button {
+  display: flex;
+  align-self: flex-end;
+  color: var(--white);
+  background-color: var(--denim);
+  border-radius: 3px;
+  padding: 0.5rem;
+  border: none;
+  margin: 1rem;
+  font-family: ubuntu-medium;
+}
+
+#go_back_button {
+  display: flex;
+  align-self: flex-end;
+  color: var(--gray);
+  font-family: ubuntu-medium;
+  background-color: var(--white);
+  border-radius: 3px;
+  padding: 0.5rem;
+  border: none;
+  margin: 1rem;
+}
+
+#confirm_step_button {
+  align-self: flex-end;
+  color: var(--white);
+  font-family: ubuntu-regular;
+  background-color: var(--purple);
+  border-radius: 3px;
+  padding: 0.5rem;
+  border: none;
+  margin: 1rem;
+}
+
+#monthly_plan,
+#yearly_plan {
+  display: flex;
+  flex-direction: column;
+
   /* justify-content: space-around; */
 }
 /* 
@@ -322,34 +342,32 @@ p{
   border: solid 1px hsl(243, 100%, 62%);
 } */
 
-
 #monthly_plan p:first-child {
-  color:hsl(213, 96%, 18%);
-
+  color: var(--denim);
 }
 input:required:invalid {
-  border-color: #c00000;
+  border-color: var(--red-errors);
 }
 *:required {
-  border: solid 1px red;
+  border: solid 1px var(--red-errors);
 }
 
-.form_input:hover{
-  border: solid 1px hsl(243, 100%, 62%);
+.form_input:hover {
+  border: solid 1px var(--purple);
 }
 
-.form_lables{
+.form_lables {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: ubuntu-regular;
 }
-.btn{
+.btn {
   /* display: flex; */
   margin: 0.5rem;
-  background-color: hsl(231, 100%, 99%);
-  border: solid 1px hsl(229, 24%, 87%);
+  background-color: var(--white);
+  border: solid 1px var(--border-color);
   border-radius: 10px;
-
 }
 
 /* cant achive qith flexbox need to learn more css! */
@@ -357,158 +375,199 @@ input:required:invalid {
   float: left;
 } */
 
-
-.btn:focus { border-color:hsl(243, 100%, 62%); }
-.btn:hover { border-color:hsl(243, 100%, 62%); }
-
-.planChoise{
-  font-family: ubuntu-medium;;
+.btn:focus {
+  border-color: var(--purple);
 }
 
-#selectedPlanPriceM,#planChoiseM,#selectedPlanPriceY,#planChoiseY{
-font-family: ubuntu-medium;;
+.btn:hover {
+  border-color: var(--purple);
+  background-color: var(--v-light-gray);
+}
+
+.planChoise {
+  font-family: ubuntu-medium;
+}
+
+#selectedPlanPriceM,
+#planChoiseM,
+#selectedPlanPriceY,
+#planChoiseY {
+  font-family: ubuntu-medium;
 }
 
 .summary1 {
-  border-bottom: 1px solid hsl(229, 24%, 87%);
+  border-bottom: 1px solid var(--border-color);
 }
-a{
-  color: hsl(231, 11%, 63%);
+a {
+  color: var(--gray);
   font-family: ubuntu-regular;
 }
-a:hover{
-  color: hsl(243, 100%, 62%);
+a:hover {
+  color: var(--purple);
 }
 
-.total{
-  color: hsl(231, 11%, 63%);
-
+.total {
+  color: var(--gray);
 }
 
-.totalPriceM, .totalPriceY{
-  color:  hsl(243, 100%, 62%);
-  font-family: ubuntu-medium;;
-
+.totalPriceM,
+.totalPriceY {
+  color: var(--purple);
+  font-family: ubuntu-medium;
 }
 
-.summary1,.summary2,.summary3,.summary4,.summary5{
+.summary1,
+.summary2,
+.summary3,
+.summary4,
+.summary5 {
   display: flex;
   justify-content: space-between;
-  color: hsl(231, 11%, 63%);
+  color: var(--gray);
 }
-.addonChoise1,.addonChoise2,.addonChoise3,.addonChoiseY1,.addonChoiseY2,.addonChoiseY3{
+.addonChoise1,
+.addonChoise2,
+.addonChoise3,
+.addonChoiseY1,
+.addonChoiseY2,
+.addonChoiseY3 {
   display: flex;
   justify-content: space-between;
-  color: hsl(231, 11%, 63%);
+  color: var(--gray);
 }
 
-#switch_div{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color:hsl(213, 96%, 18%);
-    font-family: ubuntu-regular;
-    font-size: 16px;
-    background-color: hsl(217, 100%, 97%);
+#switch_div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--denim);
+  font-family: ubuntu-regular;
+  font-size: 16px;
+  background-color: var(--v-light-gray);
 }
 /* css for the switch button  */
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 1.5em;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 1em;
-    width: 1em;
-    left: 12px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: hsl(213, 96%, 18%);
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 1.5em;
+}
 
-  .addons1{
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5rem;
-    background-color: hsl(231, 100%, 99%);
-    border: solid 1px hsl(229, 24%, 87%);
-    border-radius: 10px;
-    /* gap: 1em; */
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-  }
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
 
-  .addons1:hover{
-    border: solid 1px hsl(243, 100%, 62%);
-  }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  left: 12px;
+  bottom: 4px;
+  background-color: var(--white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--denim);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* .addons1 {
+  display: flex;
+  /* flex-wrap: wrap; */
+/* justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  background-color: var(--white);
+  border: solid 1px var(--gray);
+  border-radius: 10px; */
+/* gap: 1em; */
+/* } */
+
+.add-ons{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.addons1,
+.addons2,
+.addons3 {
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: row;
   
-  .addons1:checked {
-    
-    color: hsl(243, 100%, 62%);
-    
+}
 
-  } 
+.addon-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-left: 12px;
+}
 
-  /* .addons1:checked{
+.addons1:hover ,
+.addons2:hover ,
+.addons3:hover {
+  border: solid 1px var(--purple);
+}
+
+.addons1:checked,
+.addons2:checked,
+.addons3:checked {
+  color: var(--purple);
+}
+
+/* .addons1:checked{
     color: hsl(243, 100%, 62%);
    background-color: hsl(243, 100%, 62%);;
   }  */
 
 .selections {
-  background-color: hsl(231, 100%, 99%);
+  background-color: var(--white);
 }
 
-.confirmation{
+.confirmation {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -516,40 +575,39 @@ a:hover{
   /* margin: 1rem; */
   /* background-color: hsl(231, 100%, 99%);
   border: solid 1px hsl(229, 24%, 87%); */
-
 }
 
-.confirmation>h2{
+.confirmation > h2 {
   text-align: center;
 }
 
-.number_and_step{
+.number_and_step {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-#two_sidebar,#two_color{
+#two_sidebar,
+#two_color {
   padding-left: 1.3rem;
 }
 
-.step{
+.step {
   display: flex;
   flex-direction: column;
 }
 
-.step :first-child{
-  color : hsl(231, 11%, 63%);
-  font-family:ubuntu-medium ;
- 
-
+.step :first-child {
+  color: var(--light-blue);
+  font-family: ubuntu-medium;
 }
 
-.step :last-child{
-  color:#edf4fe;
-  font-family:ubuntu-medium ;
-font-size: small;
+.step :last-child {
+  color: var(--white);
+  font-family: ubuntu-bold;
+  font-size: small;
 }
-
-
-
+.addon-text {
+  display: flex;
+  flex-direction: column;
+}

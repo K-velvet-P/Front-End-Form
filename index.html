@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <div role="content" class="content">
+    <div class="content">
       <div id="desktop_view">
         <!-- Sidebar start -->
         <div class="toggle-content-steps_mobile">
@@ -96,7 +96,7 @@
                 <img
                   class="number_sidebar"
                   id="one_sidebar"
-                  src="assets/images/icons8-1st-50 (1).png"
+                  src="assets/images/icons8-1st-50(1).png"
                   alt="1"
                 />
               </div>
@@ -193,7 +193,7 @@
               </h2>
               <form id="form_content">
                 <div class="form_lables form">
-                  <label for="name">Name</label>
+                  <label class="form-label" for="name">Name</label>
                   <label for="name" id="error_div1"></label>
                 </div>
                 <input
@@ -246,7 +246,7 @@
                   <button
                     type="button"
                     class="btn"
-                    onclick="planSelection(this.value, this.data-price)"
+                    onclick="planSelection(this.value)"
                     value="Arcade"
                     data-price="9"
                   >
@@ -258,9 +258,9 @@
                   <button
                     type="button"
                     class="btn"
-                    onclick="planSelection(this.value)"
+                    onclick="planSelection(this.value,this.price)"
                     value="Advanced"
-                    data-price="12"
+                    price="12"
                   >
                     <img
                       src="./assets/images/icon-advanced.svg"
@@ -291,7 +291,6 @@
                     onclick="planSelection(this.value)"
                     value="Arcade"
                     data-price="90"
-
                   >
                     <img src="./assets/images/icon-arcade.svg" alt="arcade" />
                     <h3>Arcade</h3>
@@ -363,14 +362,25 @@
                   data-price="1"
                   data-pricelabel="+$1/mo"
                 />
-                <label class="label2" for="addon1">Online service</label>
-                <label for="addon1" class="label"
-                  >Access to multiplayer games</label
+                <div class="addon-text">
+                  <label class="label-1 label" for="addon1"
+                    >Online service</label
+                  >
+                  <label for="addon1" class="label-2 label"
+                    >Access to multiplayer games</label
+                  >
+                </div>
+                <label
+                  class="label-3 label"
+                  for="addon1"
+                  id="Online servicePrice"
+                  >+$1/mo</label
                 >
-                <p for="addon1" id="Online servicePrice">+$1/mo</p>
+                <!-- IVE REMOVES THE FOR ON THE PAG TAG BELOW -->
+                <!-- <p  id="Online servicePrice">+$1/mo</p> -->
               </div>
               <!-- <div id="addons" class="addons1"> -->
-              <div class="addons1">
+              <div for="addon2" class="addons1">
                 <input
                   class="addon"
                   id="addon2"
@@ -381,9 +391,20 @@
                   data-price="2"
                   data-pricelabel="+$2/mo"
                 />
-                <h3>Larger storage</h3>
-                <h4>Extra 1TB of cloud save</h4>
-                <p id="Larger storagePrice">+$2/mo</p>
+                <div class="addon-text">
+                  <label for="addon2" class="label-1 label"
+                    >Larger storage
+                  </label>
+                  <label class="label-2 label" for="addon2"
+                    >Extra 1TB of cloud save
+                  </label>
+                </div>
+                <label
+                  class="label-3 label"
+                  for="addon2"
+                  id="Larger storagePrice"
+                  >+$2/mo</label
+                >
               </div>
               <!-- <div id="addons" class="addons1"> -->
               <div class="addons1">
@@ -397,9 +418,20 @@
                   data-price="2"
                   data-pricelabel="+$2/mo"
                 />
-                <h3>Customizable Profile</h3>
-                <h4>Custom theme on your profile</h4>
-                <p id="Customizable ProfilePrice">+$2/mo</p>
+                <div class="addon-text">
+                  <label for="addon3" class="label-1"
+                    >Customizable Profile</label
+                  >
+                  <label class="label-2" for="addon3"
+                    >Custom theme on your profile</label
+                  >
+                </div>
+                <label
+                  class="label-3"
+                  for="addon3"
+                  id="Customizable ProfilePrice"
+                  >+$2/mo</label
+                >
               </div>
             </div>
           </div>
@@ -420,9 +452,15 @@
                   data-price="10"
                   data-pricelabel="+$10/yr"
                 />
-                <h3>Online service</h3>
-                <h4>Access to multiplayer games</h4>
-                <p>+$10/yr</p>
+                <div class="addon-text">
+                  <label class="label-1 label" for="addon3"
+                    >Online service</label
+                  >
+                  <label class="label-2 label" for="addon3"
+                    >Access to multiplayer games</label
+                  >
+                </div>
+                <label class="label-3 label" for="addon3">+$10/yr</label>
               </div>
               <div class="addons1" id="addons">
                 <input
@@ -435,9 +473,15 @@
                   data-price="20"
                   data-pricelabel="+$20/yr"
                 />
-                <h3>Larger storage</h3>
-                <h4>Extra 1TB of cloud save</h4>
-                <p>+$20/yr</p>
+                <div class="addon-text">
+                  <label class="label-1 label" for="addon3"
+                    >Larger storage</label
+                  >
+                  <label class="label-2 label" for="addon3"
+                    >Extra 1TB of cloud save</label
+                  >
+                </div>
+                <label class="label-3 label" for="addon3">+$20/yr</label>
               </div>
               <div class="addons1" id="addons">
                 <input
@@ -450,9 +494,15 @@
                   data-price="20"
                   data-pricelabel="+$20/yr"
                 />
-                <h3>Customizable Profile</h3>
-                <h4>Custom theme on your profile</h4>
-                <p>+$20/yr</p>
+                <div class="addon-text">
+                  <label class="label-1 label" for="addon3"
+                    >Customizable Profile</label
+                  >
+                  <label class="label-2 label" for="addon3"
+                    >Custom theme on your profile</label
+                  >
+                </div>
+                <label class="label-3 label" for="addon3">+$20/yr</label>
               </div>
             </div>
           </div>
@@ -567,5 +617,5 @@
       </div>
     </div>
   </body>
-  <script type="text/javascript" src="main.js" defer></script>
+  <script src="main.js" defer></script>
 </html>
