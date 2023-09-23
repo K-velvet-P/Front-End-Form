@@ -267,8 +267,9 @@ p {
   color:hsl(231, 11%, 63%);
   font-size: 1.2em;
 }  */
-.form-lables {
-}
+/* .form-lables {
+} */
+
 .label-1 {
   color: var(--denim);
   font-family: ubuntu-medium;
@@ -521,7 +522,7 @@ input:checked + .slider:before {
 /* gap: 1em; */
 /* } */
 
-.add-ons{
+.add-ons {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -536,7 +537,6 @@ input:checked + .slider:before {
   align-items: center;
   cursor: pointer;
   flex-direction: row;
-  
 }
 
 .addon-text {
@@ -546,8 +546,8 @@ input:checked + .slider:before {
   margin-left: 12px;
 }
 
-.addons1:hover ,
-.addons2:hover ,
+.addons1:hover,
+.addons2:hover,
 .addons3:hover {
   border: solid 1px var(--purple);
 }

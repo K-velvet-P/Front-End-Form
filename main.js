@@ -312,11 +312,7 @@ let addonChoise = [];
 
 function addonSelection(checkbox) {
   addonChoise = [];
-  // console.log("meee");
-  // console.log("planPrice-addonSelection", planPrice);
-  // console.log('addon_price',addon_price);
-  // console.log('Cboxvalue',Cboxvalue);
-
+ 
   checkBoxesM.forEach((item) => {
     // console.log("item", item);
     // loop all the checkbox item
@@ -333,17 +329,13 @@ function addonSelection(checkbox) {
   });
 
   checkBoxesY.forEach((item) => {
-    // console.log("item", item);
-    // loop all the checkbox item
     if (item.checked) {
-      //if the check box is checked
       let data = {
-        // create an object
         item: item.value,
         pricedigit: parseFloat(item.dataset.price),
         pricestring: item.dataset.pricelabel,
       };
-      addonChoise.push(data); //stored the objects to result array
+      addonChoise.push(data); 
     }
   });
 
