@@ -243,13 +243,35 @@ h3 {
   color: var(--denim);
   font-family: ubuntu-medium;
   font-size: 1.2em;
+  margin: 0;
 }
 
 h4 {
   font-family: ubuntu-regular;
   color: var(--gray);
   font-size: 1.2em;
+  margin: 0;
 }
+/* //////////////////// */
+.plan-name{
+  color: var(--denim);
+  font-family: ubuntu-medium;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.plan-price{
+  font-family: ubuntu-regular;
+  color: var(--gray);
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.plan-free{
+  font-family: ubuntu-regular;
+  color: var(--denim);
+}
+ /* ///////////////// */
 
 h5 {
   font-family: ubuntu-regular;
@@ -333,9 +355,20 @@ p {
 #monthly_plan,
 #yearly_plan {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 
   /* justify-content: space-around; */
+}
+.monthly-plan-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: solid 1px var(--border-color);
+  gap: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  max-height: 11rem;
+  width: 30%;
 }
 /* 
 #monthly_plan:hover{
@@ -364,11 +397,19 @@ input:required:invalid {
   font-family: ubuntu-regular;
 }
 .btn {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
   margin: 0.5rem;
   background-color: var(--white);
   border: solid 1px var(--border-color);
   border-radius: 10px;
+}
+.btn > img{
+  margin-bottom: 2rem;
+}
+.plan-btn{
+  width: 30%;
+  height: 50%`;
 }
 
 /* cant achive qith flexbox need to learn more css! */
@@ -611,3 +652,4 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
 }
+ 

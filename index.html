@@ -243,43 +243,49 @@
               <h2>You have the option of monthly or yearly billing.</h2>
               <div id="toggle-content-monthly_plan">
                 <div id="monthly_plan">
+                  <!-- <div class="monthly-plan-options"> -->
                   <button
                     type="button"
-                    class="btn"
+                    class="btn plan-btn"
                     onclick="planSelection(this.value)"
                     value="Arcade"
                     data-price="9"
-                  >
-                    <img src="./assets/images/icon-arcade.svg" alt="arcade" />
-                    <h3>Arcade</h3>
-                    <h4 id="arcadePriceM">$9/mo</h4>
-                  </button>
 
+                  >
+                  <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                  <span class="plan-name">Arcade</span>
+                  <span class="plan-price" id="arcadePriceM">$9/mo</span>
+                </button>
+                  <!-- </div> -->
+                  <!-- <div class="monthly-plan-options"> -->
                   <button
                     type="button"
-                    class="btn"
+                    class="btn plan-btn"
                     onclick="planSelection(this.value,this.price)"
                     value="Advanced"
                     price="12"
                   >
-                    <img
-                      src="./assets/images/icon-advanced.svg"
-                      alt="advanced"
-                    />
-                    <h3>Advanced</h3>
-                    <h4 id="advancedPriceM">$12/mo</h4>
-                  </button>
+                  <img
+                    src="./assets/images/icon-advanced.svg"
+                    alt="advanced"
+                  />
+                  <span class="plan-name" >Advanced</span>
+                  <span class="plan-price"  id="advancedPriceM">$12/mo</span>
+                </button>
+                  <!-- </div> -->
+                  <!-- <div class="monthly-plan-options"> -->
                   <button
                     type="button"
-                    class="btn"
+                    class="btn plan-btn"
                     onclick="planSelection(this.value)"
                     value="Pro"
                     data-price="15"
                   >
-                    <img src="./assets/images/icon-pro.svg" alt="pro" />
-                    <h3>Pro</h3>
-                    <h4 id="proPriceM">$15/mo</h4>
-                  </button>
+                  <img src="./assets/images/icon-pro.svg" alt="pro" />
+                  <span class="plan-name" >Pro</span>
+                  <span class="plan-price"  id="proPriceM">$15/mo</span>
+                </button>
+                  <!-- </div> -->
                 </div>
               </div>
 
@@ -287,20 +293,20 @@
                 <div id="yearly_plan">
                   <button
                     type="button"
-                    class="btn"
+                    class="btn plan-btn"
                     onclick="planSelection(this.value)"
                     value="Arcade"
                     data-price="90"
                   >
                     <img src="./assets/images/icon-arcade.svg" alt="arcade" />
-                    <h3>Arcade</h3>
-                    <h4 id="arcadePriceY">$90/yr</h4>
-                    <h5>2 months free</h5>
+                    <span class="plan-name">Arcade</span>
+                    <span class="plan-price"id="arcadePriceY">$90/yr</span>
+                    <span class="plan-free">2 months free</span>
                   </button>
 
                   <button
                     type="button"
-                    class="btn"
+                    class="btn plan-btn"
                     onclick="planSelection(this.value)"
                     value="Advanced"
                     data-price="120"
@@ -309,21 +315,21 @@
                       src="./assets/images/icon-advanced.svg"
                       alt="advanced"
                     />
-                    <h3>Advanced</h3>
-                    <h4 id="advancedPriceY">$120/yr</h4>
-                    <h5>2 months free</h5>
+                    <span class="plan-name">Advanced</span>
+                    <span class="plan-price" id="advancedPriceY">$120/yr</span>
+                    <span class="plan-free">2 months free</span>
                   </button>
                   <button
                     type="button"
-                    class="btn"
+                    class="btn plan-btn"
                     onclick="planSelection(this.value)"
                     value="Pro"
                     data-price="150"
                   >
                     <img src="./assets/images/icon-pro.svg" alt="pro" />
-                    <h3>Pro</h3>
-                    <h4 id="proPriceY">$150/yr</h4>
-                    <h5>2 months free</h5>
+                    <span class="plan-name">Pro</span>
+                    <span class="plan-price"id="proPriceY">$150/yr</span>
+                    <span class="plan-free">2 months free</span>
                   </button>
                 </div>
               </div>
@@ -373,7 +379,7 @@
                 <label
                   class="label-3 label"
                   for="addon1M"
-                  id="Online servicePrice"
+                  id="Online-servicePrice"
                   >+$1/mo</label
                 >
                 <!-- IVE REMOVES THE FOR ON THE PAG TAG BELOW -->
@@ -402,7 +408,7 @@
                 <label
                   class="label-3 label"
                   for="addon2M"
-                  id="Larger storagePrice"
+                  id="Larger-storagePrice"
                   >+$2/mo</label
                 >
               </div>
@@ -429,7 +435,7 @@
                 <label
                   class="label-3"
                   for="addon3M"
-                  id="Customizable ProfilePrice"
+                  id="Customizable-ProfilePrice"
                   >+$2/mo</label
                 >
               </div>

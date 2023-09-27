@@ -268,7 +268,7 @@ function changePlan() {
 
 // ----ADD ONS----
 
-let planPrice;
+let planPrice;//BUG 1
 
 function planSelection(value, price) {
   const planChoice = value;
@@ -301,6 +301,7 @@ function planSelection(value, price) {
 
   document.getElementById("selectedPlanPriceM").textContent = priceM; //update the price
   document.getElementById("selectedPlanPriceY").textContent = priceY;
+  return planPrice;//BUG 1
 }
 
 let itemFormsM = document.getElementsByClassName("add-ons");
@@ -356,7 +357,8 @@ function addonSelection(checkbox) {
         document.querySelector(`.addonChoiseY${i + 1}`).textContent = addonText;
         document.querySelector(`.addonPriceY${i + 1}`).textContent =
           addon_price_string;
-        addonTotal += addon_price += planPrice; // Accumulate the prices of selected add-ons
+        addonTotal += addon_price += planPrice; //BUG 1 (added priceplan to toal  price)
+        // Accumulate the prices of selected add-ons
 
         // console.log("Total addon price:", addonTotal);
 
