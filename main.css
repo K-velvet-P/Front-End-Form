@@ -36,7 +36,7 @@
   .steps_desktop {
     display: none;
   }
-  body {
+  main {
     /* height: 100vh; */
     /* border: 1px solid blue; */
     background-color: #edf4fe;
